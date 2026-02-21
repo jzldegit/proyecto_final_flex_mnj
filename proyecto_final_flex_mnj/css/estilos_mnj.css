@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.header{
+    display: flex;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px;
+    background-color: rgba(215, 240, 254);
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+.izquierda{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.logo img{
+    height: 80px;
+    width: auto;
+}
+
+.redes{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.redes img{
+    width: 8%;
+}
+
+.menu{
+    display: flex;
+    gap: 3rem;
+}
+.menu a{
+    text-decoration: none; /*Sin decoracion*/
+    padding: 10px; /*Un ancho para que quepa cada opcion*/
+    border-radius: 5px; /*Bordeamos*/
+    color: black; /*Color del texto negro*/
+    transition: all 0.3s ease; /*Hace que todo se desvanezca poco a poco*/
+}
+
+.menu a:hover{
+    background-color: white; /* Recuadro blanco */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transform: translateY(-2px); /* Pequeño salto hacia arriba para dar dinamismo */
+    color: black; /* Oscurece un poco el texto al resaltar */
+}
+
+.imagen{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.imagen-banner img{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+}
+
+.imagen-banner .tartas-art{
+    position: absolute;
+    bottom: 420px;
+    left: 400px;
+    color: white;
+    padding: 10px;
+    font-size: 2em;
+    font-family: "Civil Premium Regular";
+    animation-name: subirLentamente;
+    animation-duration: 1.5s; /* Duración lenta */
+    animation-timing-function: ease-out; /* Comienza rápido y suaviza al final */
+    animation-fill-mode: forwards; /* Mantiene el estado final */
+
+}
+
+.imagen-banner .rincon{
+    position: absolute;
+    bottom: 320px;
+    left: 400px;
+    color: white;
+    padding: 10px;
+    font-size: 4em;
+    font-family: "Apparel Display Regular";
+    animation-name: subirLentamente;
+    animation-duration: 1.5s; /* Duración lenta */
+    animation-timing-function: ease-out; /* Comienza rápido y suaviza al final */
+    animation-fill-mode: forwards; /* Mantiene el estado final */
+}
+
+.introduccion{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px;
+    background-color:  rgba(215, 240, 254);
+
+    animation: aparecer linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 50%; 
+}
+
+.introduccion p{
+    font-family: "Apparel Display Regular";
+    font-size: 1.8em;
+}
+
+.productos .cajas{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 7rem;
+    padding: 30px;
+}
+
+.producto{
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 8 6px 10px black;
+    text-align: center;
+}
+
+.producto:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px black;
+    transition: all 0.3s ease;
+}
+
+.producto img{
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 10px;
+}
+
+.pie-producto button{
+    background-color: rgba(215, 240, 254);
+    border: none;
+    color: black;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    
+}
+
+.logo-footer img{
+    height: 80px;
+    width: auto;
+}
+
+.footer{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    background-color: rgba(215, 240, 254);
+    padding: 15px;
+    justify-content: space-between;
+}
+
+.direccion{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Animacion letras subiendo*/
+@keyframes subirLentamente {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Empieza 20px más abajo */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Termina en su posición original */
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(50px); /* Opcional: viene desde abajo */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
