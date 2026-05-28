@@ -69,19 +69,24 @@
 
 
 .imagen-banner img{
-    display: flex;
-    flex-wrap: wrap;
+    display: block;
     width: 100%;
     height: auto;
 }
 
+.imagen-banner{
+    position: relative;
+}
+
 .imagen-banner .tartas-art{
     position: absolute;
-    bottom: 420px;
-    left: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
     color: white;
     padding: 10px;
-    font-size: 2em;
     font-family: "Civil Premium Regular";
     animation-name: subirLentamente;
     animation-duration: 1.5s; /* Duración lenta */
@@ -92,11 +97,13 @@
 
 .imagen-banner .rincon{
     position: absolute;
-    bottom: 320px;
-    left: 400px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
     color: white;
     padding: 10px;
-    font-size: 4em;
     font-family: "Apparel Display Regular";
     animation-name: subirLentamente;
     animation-duration: 1.5s; /* Duración lenta */
@@ -183,6 +190,28 @@
     align-content: center;
 }
 
+/*He tenido que buscar en internet porque en el apartado informacion tambien me hacia la animacion, y quedaba fea,
+la unica solucion es utilizando ":not(.dropdown-toggle)", esto hace que se aplique a todos los nav-link excepto a los de la clase dropdown-toggle*/
+
+.nav-link:not(.dropdown-toggle) {
+    position: relative;
+    text-decoration: none;
+}
+ 
+.nav-link:not(.dropdown-toggle)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+ 
+.nav-link:not(.dropdown-toggle):hover::after {
+    width: 100%;
+}
 
 
 
@@ -209,11 +238,11 @@
 @keyframes subirLentamente {
   0% {
     opacity: 0;
-    transform: translateY(20px); /* Empieza 20px más abajo */
+    transform: translate(-50%, calc(-50% + 20px));
   }
   100% {
     opacity: 1;
-    transform: translateY(0); /* Termina en su posición original */
+    transform: translate(-50%, -50%);
   }
 }
 
