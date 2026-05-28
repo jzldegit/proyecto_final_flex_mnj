@@ -213,7 +213,9 @@ la unica solucion es utilizando ":not(.dropdown-toggle)", esto hace que se apliq
     width: 100%;
 }
 
-
+#btnEnviar{
+    background-color: rgba(215, 240, 254);
+}
 
 
 

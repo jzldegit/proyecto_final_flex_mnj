@@ -39,7 +39,7 @@
                     Información
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Contacto</a></li>
+                    <li><a class="dropdown-item" href="#contacto">Contacto</a></li>
                     <li><a class="dropdown-item" href="#">Ingredientes</a></li>
                 </ul>
                 </li>
@@ -157,6 +157,57 @@
                 </article>
             </div>
         </section>
+       <section id="contacto" class="productos">
+            <div class="introduccion">
+                <p>Contacta con nosotros</p>
+            </div>
+
+            <div class="container mt-5 mb-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
+                            </div>
+                            <div class="col">
+                                <label for="apellido" class="form-label">Apellido</label>
+                                <input type="text" class="form-control" id="apellido" placeholder="Tu apellido">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="email" placeholder="tu@correo.com">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="asunto" class="form-label">Asunto</label>
+                            <select class="form-select" id="asunto">
+                                <option value="">Selecciona un asunto</option>
+                                <option value="pedido">Hacer un pedido</option>
+                                <option value="precio">Consultar precio</option>
+                                <option value="alergia">Información sobre alérgenos</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." maxlength="500"></textarea>
+                            <div class="form-text text-end"><span id="charNum">0</span>/500</div>
+                        </div>
+
+                        <p id="error" class="text-danger"></p>
+                        <p id="success" class="text-success d-none">¡Mensaje enviado! Te responderemos pronto.</p>
+
+                        <button id="btnEnviar" class="btn w-100" >Enviar mensaje</button>
+
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -171,5 +222,6 @@
 
     </footer>
 
-
+    <script src="js/script.js"></script>
 </body>
+</html>
